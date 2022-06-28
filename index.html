@@ -9,69 +9,61 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />    
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="max-w-5xl my-0 mx-auto antialiased">
     
-    <h1>Animações com Animate on Scroll</h1>
-
-    <p>Uma animação simples pode fazer a diferença na apresentação do seu site, você sabia? <br> Neste artigo você irá aprender a como fazer animações de entrada com a biblioteca de JavaScript e CSS <strong>Animate on Scroll</strong></p>
-
-    <ol>
-        <li>
-            <h1>1.	Linkando as bibliotecas 🔗</h1>
-            <p>Começamos linkando o arquivo CSS do AOS que possui as animações em classes CSS no <em>head</em> do nosso documento HTML.</p>
-            <code class="flex flex-col">
-                &#60;head&#62;
-                &#60;link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /&#62;
-                &#60;/head&#62;
-            </code>
-
-            <p>Feito isto, linkamos o arquivo JavaScript do AOS que ativará as animações para a gente.</p>
-            <code>
-                &#60;head&#62;
-                    ...
-                &#60;/head&#62;
-
-                &#60;body&#62;
-                &#60;script src="https://unpkg.com/aos@next/dist/aos.js"&#62;&#60;/script&#62;
-                &#60;/body&#62;
-            </code>
-
-        </li>
-
-        <li>
-            <h1>2. Criando a primeira animação 🎆</h1>
-            <p>Com o AOS devidamente linkado, basta nós ativarmos ele no seu arquivo JavaScript de seu projeto e passar a usar os atributos que a biblioteca adiciona como funcionalidade ao nosso documento.</p>
-            <p>Neste exemplo, o nosso arquivo principal JavaScript será o <code>script.js</code>, onde vamos querer colocar todo o comportamento do nosso site.</p>
-            <code>
-                &#60;body&#62;
-                &#60;script src="https://unpkg.com/aos@next/dist/aos.js"&#62;&#60;/script&#62;
-                &#60;script src="script.js"&#62;&#60;/script&#62;
-                &#60;/body&#62;
-            </code>
-
-            <p>Para ativar o AOS só precisamos adicionar a seguinte linha no nosso <code>script.js</code>:</p>
-            <code>
-                AOS.init();
-            </code>
-
-            <p>Agora podemos usar o atributo <code>data-aos=""</code> que o AOS nos permite usar em nosso documento HTML para fazermos as animações em qualquer elemento HTML:</p>
-
-            <code>
-                
-            </code>
-            <p>Resultado:</p>
-            <div
-                data-aos="fade-in"
-                data-aos-delay="50"
-                data-aos-duration="1000"
-                data-aos-easing="ease-in"
-                data-aos-once="false"
-                data-aos-anchor-placement="top-center"
-            >
-                Olá! Eu estou animado!
-            </div>
-        </li>
-    </ol>
+    <article class="max-w-fit h-screen overflow-y-scroll my-0 mx-auto">
+        <header class="max-w-4xl h-[75vh] flex flex-col justify-around items-center px-12 py-20 bg-cyan-800 text-white">
+            <h1 class="text-3xl mt-12 font-medium leading-7 sm:text-4xl sm:truncate underline underline-offset-2 decoration-4 decoration-cyan-700">Animações com Animate on Scroll</h1>
+            <p class="max-w-lg border-solid border-8 border-cyan-600 rounded-xl p-4 text-lg text-center">Uma animação simples pode fazer a diferença na apresentação do seu site, você sabia? <br> <br> Neste artigo você irá aprender a como fazer animações de entrada com a biblioteca de JavaScript e CSS <strong class="font-semibold">Animate on Scroll</strong></p>
+        </header>
+        <main>
+            <ol class="max-w-4xl p-12 flex flex-col items-center bg-cyan-800 text-white text-justify">
+                <li class="mb-10">
+                    <h1 class="indent-5 text-xl font-medium">1. <span class="ml-5">Linkando as bibliotecas 🔗</span></h1>
+                    <p class="mt-4">Começamos linkando o arquivo CSS do AOS que possui as animações em classes CSS no <em>head</em> do nosso documento HTML.</p>
+                    <code class="flex flex-col my-3 p-5 rounded-lg bg-gray-900 text-cyan-100">
+                        <p>&#60;head&#62;</p>
+                        <p class="indent-6">&#60;link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /&#62;</p>
+                        <p>&#60;/head&#62;</p>
+                    </code>
+                    <p>Feito isto, linkamos o arquivo JavaScript do AOS que ativará as animações para a gente.</p>
+                    <code class="flex flex-col my-3 p-5 rounded-lg bg-gray-900 text-cyan-100">
+                        <p>&#60;head&#62;</p>
+                            <p class="indent-6">...</p>
+                        <p>&#60;/head&#62;</p>
+                        <p>&#60;body&#62;</p>
+                        <p class="indent-6">&#60;script src="https://unpkg.com/aos@next/dist/aos.js"&#62;&#60;/script&#62;</p>
+                        <p>&#60;/body&#62;</p>
+                    </code>
+                </li>
+                <li class="my-10">
+                    <h1 class="indent-5 text-xl font-medium">2. <span class="ml-5">Criando a primeira animação 🎆</span></h1>
+                    <p class="mt-4">Com o AOS devidamente linkado, basta nós ativarmos ele no seu arquivo JavaScript de seu projeto e passar a usar os atributos que a biblioteca adiciona como funcionalidade ao nosso documento.</p>
+                    <p>Neste exemplo, o nosso arquivo principal JavaScript será o <code>script.js</code>, onde vamos querer colocar todo o comportamento do nosso site.</p>
+                    <code class="flex flex-col my-3 p-5 rounded-lg bg-gray-900 text-cyan-100">
+                        <p>&#60;body&#62;</p>
+                        <p class="indent-6">&#60;script src="https://unpkg.com/aos@next/dist/aos.js"&#62;&#60;/script&#62;</p>
+                        <p class="indent-6">&#60;script src="script.js"&#62;&#60;/script&#62;</p>
+                        <p>&#60;/body&#62;</p>
+                    </code>
+                    <p>Para ativar o AOS só precisamos adicionar a seguinte linha no nosso <code>script.js</code>:</p>
+                    <code class="flex flex-col my-3 p-5 rounded-lg bg-gray-900 text-cyan-100">
+                        AOS.init();
+                    </code>
+                    <p>Agora podemos usar o atributo <code>data-aos=""</code> que o AOS nos permite usar em nosso documento HTML para fazermos as animações em qualquer elemento HTML:</p>
+                    <code>
+        
+                    </code>
+                    <p>Resultado:</p>
+                    <div
+                        data-aos="fade-in"
+                    >
+                        Olá! Eu estou animado!
+                    </div>
+                </li>
+            </ol>
+        </main>
+    </article>
 
 
 
