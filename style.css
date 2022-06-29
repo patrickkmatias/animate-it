@@ -8,16 +8,16 @@ h1
     font-family: 'Ubuntu';
     overflow: visible !important;
 }
-p
+p, ul
 {
     font-family: 'Poppins';
     font-weight: 300;
 }
-code p,
-code
+code, code p
 {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
 }
+code{background-color: #11182744;}
 ::-webkit-scrollbar {
     display: block;
     position: absolute;
@@ -33,3 +33,24 @@ code
   ::-webkit-scrollbar-thumb {
     background-color: rgb(2, 75, 97); 
   }
+
+.center
+{
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+}
+.container {
+    display: grid; 
+    max-height: 110vh;
+    grid-template-columns: 1.3fr 1.3fr; 
+    grid-template-rows: 1.6fr 1.6fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "cat-1 cat-2"
+      "cat-3 cat-4"; 
+}
+.cat-1 { grid-area: cat-1; }
+.cat-2 { grid-area: cat-2; }
+.cat-3 { grid-area: cat-3; }
+.cat-4 { grid-area: cat-4; }
