@@ -54,3 +54,41 @@ code{background-color: #11182744;}
 .cat-2 { grid-area: cat-2; }
 .cat-3 { grid-area: cat-3; }
 .cat-4 { grid-area: cat-4; }
+
+@media only screen and (max-width: 425px) {
+
+  header h1{margin-bottom: 25px !important;}
+
+  li{max-width: 90vw;}
+
+  code{line-break: anywhere;}
+
+  ul{height: fit-content !important; margin: 10% 0 !important;}
+
+  .container {
+    max-height: fit-content !important;
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "cat-1"
+      "cat-2"
+      "cat-3"
+      "cat-4"; 
+  }
+
+  .container>*
+  {
+    max-width: 90% !important;
+    position: relative;
+    top: 0; left: 0;
+    transform: translate(0, 0);
+  }
+  .cat-2
+  {
+    position: relative;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) !important;
+  }
+}
