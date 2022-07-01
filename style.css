@@ -57,7 +57,7 @@ code{background-color: #11182744;}
 
 @media only screen and (max-width: 425px) {
 
-  header h1{margin-bottom: 25px !important;}
+  header h1{margin-bottom: 25px !important;line-height: 2.6rem !important;}
 
   li{max-width: 90vw;}
 
