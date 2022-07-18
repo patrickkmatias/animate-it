@@ -2,7 +2,7 @@
 
 ![Landing page | animate-it](animate-it.png)
 
-[Animate it - artigo](https://pmattheew.github.io/animate-it)
+**[Animate it - artigo](https://pmattheew.github.io/animate-it)**
 
 O Animate It surgiu a partir de meu primeiro artigo de animação web, Animações com AOS, qual fiz para espalhar aos colegas de classe como fiz animações nos projetos que apresentei durante o curso do Senac, e vi que poderia render um repositório com diversos outros tutoriais de mesma orientação.
 
