@@ -1,128 +1,259 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animações com AOS</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />    
-    <link rel="stylesheet" href="style.css">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9RZLTKN7QX"></script>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-9RZLTKN7QX"
+    ></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-9RZLTKN7QX');
+      gtag("config", "G-9RZLTKN7QX");
     </script>
-</head>
-<body class="max-w-5xl my-0 mx-auto antialiased">
-    
-    <article class="max-w-fit h-screen my-0 mx-auto">
-        <header class="max-w-4xl h-[75vh] flex flex-col justify-around items-center px-12 py-20 bg-cyan-800 text-white">
-            <h1 class="text-3xl mt-12 font-medium leading-7 sm:text-4xl sm:truncate underline underline-offset-2 decoration-4 decoration-cyan-700">Animações com Animate on Scroll</h1>
-            <p class="max-w-lg border-solid border-8 border-cyan-600 rounded-xl p-4 text-lg text-center">Uma animação simples pode fazer a diferença na apresentação do seu site, você sabia? <br> <br> Neste artigo você irá aprender a como fazer animações de entrada com a biblioteca de JavaScript e CSS <strong class="font-semibold">Animate on Scroll</strong></p>
-        </header>
-        <main>
-            <ol class="max-w-4xl p-12 flex flex-col items-center bg-cyan-800 text-white text-justify overflow-hidden">
-                <li class="mb-10">
-                    <h1 class="indent-5 text-xl font-medium">1. <span class="ml-5">Linkando as bibliotecas 🔗</span></h1>
-                    <p class="my-8">Começamos linkando o arquivo CSS do AOS que possui as animações em classes CSS no <em>head</em> do nosso documento HTML.</p>
-                    <code class="flex flex-col my-3 p-5 rounded-lg bg-gray-900 text-cyan-100">
-                        <p>&#60;head&#62;</p>
-                        <p class="indent-6">&#60;link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /&#62;</p>
-                        <p>&#60;/head&#62;</p>
-                    </code>
-                    <p class="my-8">Feito isto, linkamos o arquivo JavaScript do AOS que ativará as animações para a gente no fim do <em>body</em> do nosso documento.</p>
-                    <code class="flex flex-col my-3 p-5 rounded-lg bg-gray-900 text-cyan-100">
-                        <p>&#60;head&#62;</p>
-                            <p class="indent-6">...</p>
-                        <p>&#60;/head&#62;</p>
-                        <p>&#60;body&#62;</p>
-                        <p class="indent-6">&#60;script src="https://unpkg.com/aos@next/dist/aos.js"&#62;&#60;/script&#62;</p>
-                        <p>&#60;/body&#62;</p>
-                    </code>
-                </li>
-                <li class="my-10">
-                    <h1 class="indent-5 text-xl font-medium">2. <span class="ml-5">Criando a primeira animação 🎆</span></h1>
-                    <p class="my-8">Com o AOS devidamente linkado, basta nós o iniciarmos em nosso arquivo JavaScript e passar a usar os atributos que a biblioteca adiciona como funcionalidade ao nosso documento.</p>
-                    <p class="my-8">Neste exemplo, o nosso arquivo principal JavaScript será o <code>script.js</code>, onde vamos querer colocar todo o comportamento do nosso site. Ele <strong>deve</strong> ser linkado após o link do AOS:</p>
-                    <code class="flex flex-col my-3 p-5 rounded-lg bg-gray-900 text-cyan-100">
-                        <p>&#60;body&#62;</p>
-                        <p class="indent-6">&#60;script src="https://unpkg.com/aos@next/dist/aos.js"&#62;&#60;/script&#62;</p>
-                        <p class="indent-6">&#60;script src="script.js"&#62;&#60;/script&#62;</p>
-                        <p>&#60;/body&#62;</p>
-                    </code>
-                    <p class="my-8">Para iniciar o AOS só precisamos adicionar a seguinte linha no nosso <code>script.js</code>:</p>
-                    <code class="flex flex-col my-3 p-5 rounded-lg bg-gray-900 text-cyan-100">
-                        AOS.init();
-                    </code>
-                    <p class="my-8">Agora já podemos fazer animações no nosso site com o Animate on Scroll!</p>
-                    <p class="my-8"><strong class="font-semibold">É importante</strong> para que nossa animação funcione corretamente, sem apresentar barras de rolagem ao ativar, que o seu elemento pai possua o estilo <code>overflow: hidden;</code>, que pode ser dado através do seu arquivo CSS.</p>
-                    <p class="my-8">Agora podemos usar o atributo <code>data-aos=""</code> que o AOS nos permite usar em nosso documento HTML para fazermos as animações em qualquer elemento HTML:</p>
-                    <code class="flex flex-col my-3 p-5 rounded-lg bg-gray-900 text-cyan-100">
-                        <p>&#60;div style="overflow: hidden;"&#62;</p>
-                        <p class="indent-5">&#60;img data-aos="fade-up" src="gatinho.jpg"&#62;</p>
-                        <p>&#60;/div&#62;</p>
-                    </code>
-                    <p class="my-8 flex justify-center">Resultado:</p>
-                    <img class="max-w-xs mt-0 mb-8 mx-auto rounded-xl" data-aos="fade-up" src="https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="gato em fundo azul">
-                    <span class="grid place-content-center text-xl">🎉</span>
-                </li>
+  </head>
+  <body>
+    <article>
+      <header class="bg-cyan-800">
+        <h1 class="decoration-cyan-700">Animações com Animate on Scroll</h1>
+        <p class="border-cyan-600">
+          Uma animação simples pode fazer a diferença na apresentação do seu
+          site, você sabia? <br />
+          <br />
+          Neste artigo você irá aprender a como fazer animações de entrada com a
+          biblioteca de JavaScript e CSS
+          <strong>Animate on Scroll</strong>
+        </p>
+      </header>
+      <main>
+        <ol
+          class="bg-cyan-800"
+        >
+          <li>
+            <h1>
+              1. <span>Linkando as bibliotecas 🔗</span>
+            </h1>
+            <p>
+              Começamos linkando o arquivo CSS do AOS que possui as animações em
+              classes CSS no <em>head</em> do nosso documento HTML.
+            </p>
+            <code
+              class="flex flex-col my-3 p-5 rounded-lg bg-gray-900 text-cyan-100"
+            >
+              <p>&#60;head&#62;</p>
+              <p class="indent-6">
+                &#60;link rel="stylesheet"
+                href="https://unpkg.com/aos@next/dist/aos.css" /&#62;
+              </p>
+              <p>&#60;/head&#62;</p>
+            </code>
+            <p>
+              Feito isto, linkamos o arquivo JavaScript do AOS que ativará as
+              animações para a gente no fim do <em>body</em> do nosso documento.
+            </p>
+            <code
+              class="flex flex-col my-3 p-5 rounded-lg bg-gray-900 text-cyan-100"
+            >
+              <p>&#60;head&#62;</p>
+              <p class="indent-6">...</p>
+              <p>&#60;/head&#62;</p>
+              <p>&#60;body&#62;</p>
+              <p class="indent-6">
+                &#60;script
+                src="https://unpkg.com/aos@next/dist/aos.js"&#62;&#60;/script&#62;
+              </p>
+              <p>&#60;/body&#62;</p>
+            </code>
+          </li>
+          <li>
+            <h1>
+              2. <span>Criando a primeira animação 🎆</span>
+            </h1>
+            <p>
+              Com o AOS devidamente linkado, basta nós o iniciarmos em nosso
+              arquivo JavaScript e passar a usar os atributos que a biblioteca
+              adiciona como funcionalidade ao nosso documento.
+            </p>
+            <p>
+              Neste exemplo, o nosso arquivo principal JavaScript será o
+              <code>script.js</code>, onde vamos querer colocar todo o
+              comportamento do nosso site. Ele <strong>deve</strong> ser linkado
+              após o link do AOS:
+            </p>
+            <code
+              class="flex flex-col my-3 p-5 rounded-lg bg-gray-900 text-cyan-100"
+            >
+              <p>&#60;body&#62;</p>
+              <p class="indent-6">
+                &#60;script
+                src="https://unpkg.com/aos@next/dist/aos.js"&#62;&#60;/script&#62;
+              </p>
+              <p class="indent-6">
+                &#60;script src="script.js"&#62;&#60;/script&#62;
+              </p>
+              <p>&#60;/body&#62;</p>
+            </code>
+            <p>
+              Para iniciar o AOS só precisamos adicionar a seguinte linha no
+              nosso <code>script.js</code>:
+            </p>
+            <code
+              class="flex flex-col my-3 p-5 rounded-lg bg-gray-900 text-cyan-100"
+            >
+              AOS.init();
+            </code>
+            <p>
+              Agora já podemos fazer animações no nosso site com o Animate on
+              Scroll!
+            </p>
+            <p>
+              <strong class="font-semibold">É importante</strong> para que nossa
+              animação funcione corretamente, sem apresentar barras de rolagem
+              ao ativar, que o seu elemento pai possua o estilo
+              <code>overflow: hidden;</code>, que pode ser dado através do seu
+              arquivo CSS.
+            </p>
+            <p>
+              Agora podemos usar o atributo <code>data-aos=""</code> que o AOS
+              nos permite usar em nosso documento HTML para fazermos as
+              animações em qualquer elemento HTML:
+            </p>
+            <code
+              class="flex flex-col my-3 p-5 rounded-lg bg-gray-900 text-cyan-100"
+            >
+              <p>&#60;div style="overflow: hidden;"&#62;</p>
+              <p class="indent-5">
+                &#60;img data-aos="fade-up" src="gatinho.jpg"&#62;
+              </p>
+              <p>&#60;/div&#62;</p>
+            </code>
+            <p class="my-8 flex justify-center">Resultado:</p>
+            <img
+              class="max-w-xs mt-0 mb-8 mx-auto rounded-xl"
+              data-aos="fade-up"
+              src="https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+              alt="gato em fundo azul"
+            />
+            <span class="grid place-content-center text-xl">🎉</span>
+          </li>
 
-                <li class="my-10">
-                    <h1 class="indent-5 text-xl font-medium">3. <span class="ml-5">Customizando a animação (bônus) 🎨</span></h1>
-                    <p class="my-8">Só com o que já temos é totalmente possível utilizar em nossos projetos animações que irão ativar ao usuário rolar a página. Porém vamos dizer que queremos além disto 🤔</p>
-                    <p class="my-8">O <code>data-aos</code> que agora podemos usar é muito poderoso, e nos possibilita fazer muitas customizações em nossas animações:</p>
-                    <ul class="flex flex-col justify-around border-solid border-8 border-cyan-600 rounded-xl m-7 p-7 text-sm list-disc h-72">
-                        <li>Você quer que a animação tenha delay para iniciar? Com <code>data-aos-delay="[millisegundos]"</code> você pode;</li>
-                        <li>E fazer a animação acontecer só uma vez? Com <code>data-aos-once="[true&#124;&#124;false]"</code> você consegue;</li>
-                        <li>Talvez você queira aumentar a duração da animação. Com <code>data-aos-duration="[millisegundos]"</code> você é capaz;</li>
-                        <li>Ou até mesmo ir além e fazer escolher onde a animação será ativada. Com <code>data-aos-anchor-placement="[alturaDoElemento]-[alturaDaViewport]{ex.:[top-center]}"</code> é possível.</li>
-                    </ul>
-                    <p class="my-8">Claro, nos comandos acima remova os colchetes e deixe o valor explícito, como no primeiro exemplo da etapa dois.</p>
-                    <p class="my-8">Você pode fazer isto tudo e muito além <a class="text-cyan-400 hover:text-cyan-500 transition duration-500" href="https://github.com/michalsnik/aos#animations" target="_blank">através da documentação do AOS</a>.</p>
-                </li>
+          <li>
+            <h1>
+              3. <span>Customizando a animação (bônus) 🎨</span>
+            </h1>
+            <p>
+              Só com o que já temos é totalmente possível utilizar em nossos
+              projetos animações que irão ativar ao usuário rolar a página.
+              Porém vamos dizer que queremos além disto 🤔
+            </p>
+            <p>
+              O <code>data-aos</code> que agora podemos usar é muito poderoso, e
+              nos possibilita fazer muitas customizações em nossas animações:
+            </p>
+            <ul
+              class="flex flex-col justify-around border-solid border-8 border-cyan-600 rounded-xl m-7 p-7 text-sm list-disc h-72"
+            >
+              <li>
+                Você quer que a animação tenha delay para iniciar? Com
+                <code>data-aos-delay="[millisegundos]"</code> você pode;
+              </li>
+              <li>
+                E fazer a animação acontecer só uma vez? Com
+                <code>data-aos-once="[true&#124;&#124;false]"</code> você
+                consegue;
+              </li>
+              <li>
+                Talvez você queira aumentar a duração da animação. Com
+                <code>data-aos-duration="[millisegundos]"</code> você é capaz;
+              </li>
+              <li>
+                Ou até mesmo ir além e fazer escolher onde a animação será
+                ativada. Com
+                <code
+                  >data-aos-anchor-placement="[alturaDoElemento]-[alturaDaViewport]{ex.:[top-center]}"</code
+                >
+                é possível.
+              </li>
+            </ul>
+            <p>
+              Claro, nos comandos acima remova os colchetes e deixe o valor
+              explícito, como no primeiro exemplo da etapa dois.
+            </p>
+            <p>
+              Você pode fazer isto tudo e muito além
+              <a
+                class="text-cyan-400 hover:text-cyan-500 transition duration-500"
+                href="https://github.com/michalsnik/aos#animations"
+                target="_blank"
+                >através da documentação do AOS</a
+              >.
+            </p>
+          </li>
 
-                <grid class="container">
-                    <img 
-                        class="cat-1 max-w-xs my-0 mx-auto rounded-xl"
-                        src="https://images.unsplash.com/photo-1606214174585-fe31582dc6ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" 
-                        alt="gatinho 2"
-                        data-aos="fade-right"    
-                        data-aos-duration="2000"
-                    >
-                    <img 
-                        class="cat-2 max-w-xs my-0 mx-auto rounded-xl" 
-                        src="https://images.unsplash.com/photo-1594142404563-64cccaf5a10f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" 
-                        alt="gatinho 3"
-                        data-aos="fade-left"
-                        data-aos-duration="2000"
-                        data-aos-delay="1000"
-                    >
-                    <div 
-                        class="cat-3 h-52 w-60 mt-10 mb-0 mx-auto rounded-xl relative overflow-hidden"
-                        data-aos="fade-up"
-                        data-aos-duration="2000"
-                    ><img class="center max-h-96 max-w-full z-10" src="https://images.unsplash.com/photo-1586289883499-f11d28aaf52f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="gatinho 4"></div>
-                    <img 
-                        class="cat-4 max-w-xs my-0 mx-auto rounded-xl relative bottom-48" 
-                        src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" 
-                        alt="gatinho 5"
-                        data-aos="fade-up"
-                        data-aos-duration="2000"
-                        data-aos-delay="1000"
-                    >
-                </grid>
-                <p class="mt-8">Para mais exemplos e ideias de animações, acesse o <a class="text-cyan-400 hover:text-cyan-500 transition duration-500" href="https://michalsnik.github.io/aos/" target="_blank">Github Pages do AOS</a>.</p>
-            </ol>
-        </main>
+          <grid class="container">
+            <img
+              class="cat-1 max-w-xs my-0 mx-auto rounded-xl"
+              src="https://images.unsplash.com/photo-1606214174585-fe31582dc6ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+              alt="gatinho 2"
+              data-aos="fade-right"
+              data-aos-duration="2000"
+            />
+            <img
+              class="cat-2 max-w-xs my-0 mx-auto rounded-xl"
+              src="https://images.unsplash.com/photo-1594142404563-64cccaf5a10f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+              alt="gatinho 3"
+              data-aos="fade-left"
+              data-aos-duration="2000"
+              data-aos-delay="1000"
+            />
+            <div
+              class="cat-3 h-52 w-60 mt-10 mb-0 mx-auto rounded-xl relative overflow-hidden"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
+              <img
+                class="center max-h-96 max-w-full z-10"
+                src="https://images.unsplash.com/photo-1586289883499-f11d28aaf52f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                alt="gatinho 4"
+              />
+            </div>
+            <img
+              class="cat-4 max-w-xs my-0 mx-auto rounded-xl relative bottom-48"
+              src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+              alt="gatinho 5"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+              data-aos-delay="1000"
+            />
+          </grid>
+          <p class="mt-8">
+            Para mais exemplos e ideias de animações, acesse o
+            <a
+              class="text-cyan-400 hover:text-cyan-500 transition duration-500"
+              href="https://michalsnik.github.io/aos/"
+              target="_blank"
+              >Github Pages do AOS</a
+            >.
+          </p>
+        </ol>
+      </main>
     </article>
 
-
-
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="script.js"></script>    
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
